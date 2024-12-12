@@ -59,7 +59,7 @@ system.mem_ranges = [AddrRange("512MiB")]  # Create an address range
 # Create a simple CPU
 # You can use ISA-specific CPU models for different workloads:
 # `RiscvTimingSimpleCPU`, `ArmTimingSimpleCPU`.
-system.cpu = X86TimingSimpleCPU()
+system.cpu = X86O3CPU()
 
 # Create a memory bus, a system crossbar, in this case
 system.membus = SystemXBar()
@@ -94,7 +94,7 @@ thispath = os.path.dirname(os.path.realpath(__file__))
 binary = os.path.join(
     thispath,
     "../../../",
-    "tests/test-progs/hello/bin/x86/linux/hello",
+    "tests/test-progs/matmul/bin/com_mm",
 )
 
 system.workload = SEWorkload.init_compatible(binary)

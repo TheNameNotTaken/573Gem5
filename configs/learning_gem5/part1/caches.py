@@ -92,7 +92,7 @@ class L1DCache(L1Cache):
     """Simple L1 data cache with default values"""
 
     # Set the default size
-    size = "64KiB"
+    size = "8192KiB"
 
     SimpleOpts.add_option(
         "--l1d_size", help=f"L1 data cache size. Default: {size}"
